@@ -13,12 +13,18 @@ import 'package:movio/src/Features/search/models/artists/artistsmodel.dart';
 import 'package:movio/src/Features/search/views/artists_detials_view.dart';
 import 'package:movio/src/Features/search/views/search_%20view.dart';
 import 'package:movio/src/Features/search/views/top_artists_view.dart';
+import 'package:movio/src/Features/splash/view/splash_view.dart';
 import 'package:movio/src/core/appRouter/router_name.dart';
 
 abstract class AppRouter {
   static final routr = GoRouter(routes: [
-    GoRoute(
+     GoRoute(
       path: '/',
+      builder: (context, state) => const     MyCustomSplashScreen(),
+ 
+    ),
+    GoRoute(
+      path: RouterName.homeview,
       builder: (context, state) => const HomeView(),
     ),
     GoRoute(

@@ -1,10 +1,10 @@
  
 
 import 'dart:async';
+
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:lottie/lottie.dart';
-import 'package:movio/src/Features/home/views/home_view.dart';
+import 'package:go_router/go_router.dart';
+import 'package:movio/src/core/appRouter/router_name.dart';
 import 'package:movio/src/core/consts/colors.dart';
 import 'package:svg_flutter/svg.dart';
 
@@ -57,7 +57,7 @@ class _MyCustomSplashScreenState extends State<MyCustomSplashScreen>
 
     Timer(const Duration(seconds: 4), () {
       setState(() {
-        Navigator.pushReplacement(context, PageTransition(const HomeView()));
+        GoRouter.of(context).pushReplacement( RouterName.homeview);
       });
     });
   }
@@ -90,6 +90,7 @@ class _MyCustomSplashScreenState extends State<MyCustomSplashScreen>
                 child: Text(
                   'Movio',
                   style: TextStyle(
+                    
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
                     fontSize: animation1.value,
@@ -110,7 +111,7 @@ class _MyCustomSplashScreenState extends State<MyCustomSplashScreen>
                 width: width / _containerSize,
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
-                  color:   const Color.fromARGB(255, 60, 60, 60),
+                  color:   MyColor.primeryColor,
                   borderRadius: BorderRadius.circular(30),
                 ),
                 child: SvgPicture.asset("assets/images/movelogoblack.svg")

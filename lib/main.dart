@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:movio/src/Features/home/models/movie_model.dart';
 import 'package:movio/src/Features/navBar/controller/searchPerson/navigator_cubit.dart';
-import 'package:movio/src/Features/splash/view/splash_view.dart';
+import 'package:movio/src/core/appRouter/appRouter.dart';
 import 'package:movio/src/core/consts/consts.dart';
 
 void main() async {
@@ -22,12 +22,12 @@ class Movio extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => NavigatorCubit(),
-      child: MaterialApp(
+      child: MaterialApp.router(
 
           color: Colors.red,
           theme: ThemeData.dark(),
-          home: const MyCustomSplashScreen(),
-          // routerConfig: AppRouter.routr,?
+       
+          routerConfig: AppRouter.routr,
           debugShowCheckedModeBanner: false),
     );
   }

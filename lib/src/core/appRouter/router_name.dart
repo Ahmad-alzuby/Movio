@@ -5,4 +5,5 @@ abstract class RouterName {
   static String artistsDetailsView = '/ArtistsDetailsView';
   static String viewAllMovies = "/viewAllMovies";
   static String genreMovies = "/GenreMovies";
+  static String homeview = '/homeview';
 }
